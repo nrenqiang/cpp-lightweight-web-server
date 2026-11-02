@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1782192951 source:d:\simplewebserver\simplewebserver\src\cnet.cpp
+	"../include/CNet.h"
+
+1782109810 d:\simplewebserver\simplewebserver\include\cnet.h
+	<iostream>
+	<winsock2.h>
+	<string>
+	"CNetService.h"
+	<map>
+	"CBaseConverts.h"
+	"Config.h"
+	"CLoadDll.h"
+
+1780884002 d:\simplewebserver\simplewebserver\include\cnetservice.h
+	<iostream>
+	<string>
+	<map>
+
+1782096193 source:d:\simplewebserver\simplewebserver\src\cnetservice.cpp
+	"../include/CNetService.h"
+	<map>
+	<fstream>
+
+1782178519 source:d:\simplewebserver\simplewebserver\src\testnetmain.cpp
+	"../include/CNet.h"
+	<iostream>
+
+1781622240 source:d:\simplewebserver\simplewebserver\src\cbaseconverts.cpp
+	"CBaseConverts.h"
+
+1781021637 d:\simplewebserver\simplewebserver\include\cbaseconverts.h
+	<string>
+	<sstream>
+	<vector>
+	<iostream>
+	<map>
+
+1782095821 source:d:\simplewebserver\simplewebserver\src\config.cpp
+	"Config.h"
+
+1780927826 d:\simplewebserver\simplewebserver\include\config.h
+	<string>
+	<iostream>
+	<windows.h>
+	<fstream>
+
+1782111020 d:\simplewebserver\simplewebserver\include\iwebserver.h
+	<string>
+	<map>
+
+1782111131 source:d:\simplewebserver\simplewebserver\src\cloaddll.cpp
+	"CLoadDll.h"
+	<iostream>
+
+1782110462 d:\simplewebserver\simplewebserver\include\cloaddll.h
+	"IWebServer.h"
+	<windows.h>
+	<map>
+	<string>
+

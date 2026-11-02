@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技感控制台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 基础样式 & 字体 */
+        body {
+            font-family: 'Courier New', monospace;
+            background: #05081a;
+            color: #00f0ff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 科技网格背景 - 纯CSS绘制 */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        /* 动态扫描线效果 */
+        .scan-line {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+            animation: scan 4s linear infinite;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+
+        /* 霓虹发光边框 */
+        .neon-box {
+            border: 1px solid #00f0ff;
+            box-shadow: 0 0 10px #00f0ff,
+                        0 0 20px #00f0ff,
+                        inset 0 0 10px #00f0ff;
+            border-radius: 4px;
+            background: rgba(5, 8, 26, 0.8);
+            backdrop-filter: blur(2px);
+        }
+
+        /* 页面容器 */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 头部样式 */
+        .header {
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+            letter-spacing: 3px;
+        }
+
+        /* 打字机效果 */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid #00f0ff;
+            white-space: nowrap;
+            margin: 1rem auto;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            font-size: 1.2rem;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00f0ff }
+        }
+
+        /* 数据面板布局 */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 卡片样式 */
+        .card {
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px #00f0ff, 0 0 30px #00f0ff;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 0 0 5px #00f0ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card h3::after {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: #00f0ff;
+            box-shadow: 0 0 5px #00f0ff;
+        }
+
+        /* 数据列表 */
+        .data-list {
+            list-style: none;
+        }
+
+        .data-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .data-list li span {
+            color: #fff;
+            text-shadow: 0 0 3px #00f0ff;
+        }
+
+        /* 进度条 */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border-radius: 4px;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #00f0ff, #0088ff);
+            box-shadow: 0 0 10px #00f0ff;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* 底部状态条 */
+        .status-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.8rem 2rem;
+            background: rgba(5, 8, 26, 0.9);
+            border-top: 1px solid #00f0ff;
+            box-shadow: 0 0 10px #00f0ff;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10;
+        }
+
+        /* 动态粒子连接线 - 纯CSS */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .line {
+            position: absolute;
+            background: linear-gradient(transparent, rgba(0, 240, 255, 0.3));
+            animation: flow 8s infinite linear;
+        }
+
+        @keyframes flow {
+            0% { opacity: 0; transform: translateY(20px); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 科技网格背景 -->
+    <div class="grid-bg"></div>
+    <!-- 动态扫描线 -->
+    <div class="scan-line"></div>
+    <!-- 粒子线条 -->
+    <div class="particles"></div>
+
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header neon-box">
+            <h1>QUANTUM CONTROL SYSTEM</h1>
+            <div class="typewriter">系统初始化完成 | 连接状态：在线 | 加密协议：ACTIVE</div>
+        </div>
+
+        <!-- 数据面板 -->
+        <div class="dashboard">
+            <!-- 系统状态卡片 -->
+            <div class="card neon-box">
+                <h3>📊 系统状态</h3>
+                <ul class="data-list">
+                    <li>CPU 使用率 <span>87.2%</span></li>
+                    <li>内存占用 <span>62.8%</span></li>
+                    <li>网络流量 <span>1.2GB/s</span></li>
+                    <li>运行时长 <span>168h 32m</span></li>
+                </ul>
+            </div>
+
+            <!-- 性能监控卡片 -->
+            <div class="card neon-box">
+                <h3>⚡ 性能监控</h3>
+                <p>核心负载</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 78%"></div>
+                </div>
+                <p>数据传输</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 92%"></div>
+                </div>
+                <p>安全防护</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 100%"></div>
+                </div>
+            </div>
+
+            <!-- 设备状态卡片 -->
+            <div class="card neon-box">
+                <h3>🔌 设备连接</h3>
+                <ul class="data-list">
+                    <li>主服务器 <span style="color:#00ff9d">ONLINE</span></li>
+                    <li>节点设备 <span style="color:#00ff9d">16/16</span></li>
+                    <li>异常设备 <span style="color:#ff4444">0</span></li>
+                    <li>连接加密 <span style="color:#00ff9d">ENABLED</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 日志输出区域 -->
+        <div class="card neon-box" style="grid-column: 1/-1; height: 200px; overflow-y: auto;">
+            <h3>📝 系统日志</h3>
+            <div style="line-height: 1.6; margin-top: 1rem;">
+                [00:12:34] 连接量子数据库成功<br>
+                [00:12:36] 安全验证通过：LEVEL 5<br>
+                [00:12:40] 数据同步完成：1.84TB<br>
+                [00:12:45] 系统优化完成，性能提升12%<br>
+                [00:12:50] 实时监控已启动<br>
+                [00:13:00] 所有模块运行正常<br>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部状态栏 -->
+    <div class="status-bar">
+        <span>© 2025 QUANTUM TECH | 版本：v2.4.1</span>
+        <span>安全连接 | 实时防护已开启</span>
+    </div>
+
+    <script>
+        // 动态生成粒子线条
+        const particles = document.querySelector('.particles');
+        for (let i = 0; i < 30; i++) {
+            const line = document.createElement('div');
+            line.classList.add('line');
+            line.style.width = `${Math.random() * 2 + 1}px`;
+            line.style.height = `${Math.random() * 150 + 50}px`;
+            line.style.left = `${Math.random() * 100}%`;
+            line.style.top = `${Math.random() * 100}%`;
+            line.style.animationDelay = `${Math.random() * 8}s`;
+            particles.appendChild(line);
+        }
+
+        // 打字机效果重置
+        const typewriter = document.querySelector('.typewriter');
+        setInterval(() => {
+            typewriter.style.animation = 'none';
+            setTimeout(() => {
+                typewriter.style.animation = 'typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite';
+            }, 10);
+        }, 5000);
+    </script>
+</body>
+</html>

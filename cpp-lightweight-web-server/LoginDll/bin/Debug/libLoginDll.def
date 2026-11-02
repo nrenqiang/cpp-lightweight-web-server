@@ -1,0 +1,6 @@
+EXPORTS
+    _ZTI10IWebServer @1 DATA
+    _ZTV10IWebServer @2 DATA
+    createServer @3
+    doGet @4
+    doPost @5

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="gbk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/adminstyle.css">
+    <title>管理后台</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>后台管理</h2>
+            <p>欢迎回来，用户</p>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item active">
+                <span class="nav-icon">&#x1F4CA;</span> 仪表盘
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon">&#x1F464;</span> 用户管理
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon">&#x1F4E6;</span> 订单管理
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon">&#x1F6CD;</span> 商品管理
+            </li>
+            <li class="nav-item">
+                <span class="nav-icon">&#x2699;</span> 系统设置
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="login.html">退出登录</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <h3>仪表盘概览</h3>
+                <p>今日数据总览</p>
+            </div>
+            <div class="top-bar-right">
+                <span class="user-avatar">&#x1F60A;</span>
+                <span class="user-name">管理员</span>
+            </div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">&#x1F465;</div>
+                <div class="stat-info">
+                    <div class="stat-value">12,847</div>
+                    <div class="stat-label">总用户数</div>
+                </div>
+                <div class="stat-badge up">&uarr; 12%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">&#x1F4E6;</div>
+                <div class="stat-info">
+                    <div class="stat-value">3,562</div>
+                    <div class="stat-label">今日订单</div>
+                </div>
+                <div class="stat-badge up">&uarr; 8%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">&#x1F4B0;</div>
+                <div class="stat-info">
+                    <div class="stat-value">&yen;58,290</div>
+                    <div class="stat-label">今日营收</div>
+                </div>
+                <div class="stat-badge up">&uarr; 23%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">&#x2B50;</div>
+                <div class="stat-info">
+                    <div class="stat-value">98.5%</div>
+                    <div class="stat-label">好评率</div>
+                </div>
+                <div class="stat-badge down">&darr; 0.3%</div>
+            </div>
+        </div>
+        <div class="content-grid">
+            <div class="table-card">
+                <div class="table-header">
+                    <h4>最近订单</h4>
+                    <a href="#">查看全部</a>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>订单号</th>
+                            <th>用户</th>
+                            <th>金额</th>
+                            <th>状态</th>
+                            <th>时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#OD-20260621</td>
+                            <td>用户12593</td>
+                            <td>&yen;299.00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td>2026-06-21 14:30</td>
+                        </tr>
+                        <tr>
+                            <td>#OD-20260621</td>
+                            <td>用户8347823</td>
+                            <td>&yen;158.00</td>
+                            <td><span class="tag tag-pending">配送中</span></td>
+                            <td>2026-06-21 13:15</td>
+                        </tr>
+                        <tr>
+                            <td>#OD-20260620</td>
+                            <td>用户94376237</td>
+                            <td>&yen;520.00</td>
+                            <td><span class="tag tag-success">已完成</span></td>
+                            <td>2026-06-20 18:42</td>
+                        </tr>
+                        <tr>
+                            <td>#OD-20260620</td>
+                            <td>用户7823647</td>
+                            <td>&yen;89.00</td>
+                            <td><span class="tag tag-cancel">已取消</span></td>
+                            <td>2026-06-20 16:20</td>
+                        </tr>
+                        <tr>
+                            <td>#OD-20260620</td>
+                            <td>用户236237</td>
+                            <td>&yen;1,280.00</td>
+                            <td><span class="tag tag-pending">配送中</span></td>
+                            <td>2026-06-20 11:05</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="action-card">
+                <div class="table-header">
+                    <h4>快捷操作</h4>
+                </div>
+                <div class="action-list">
+                    <button class="action-btn">新增用户</button>
+                    <button class="action-btn">添加商品</button>
+                    <button class="action-btn">导出报表</button>
+                    <button class="action-btn">系统公告</button>
+                    <button class="action-btn">数据备份</button>
+                    <button class="action-btn">查看日志</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="gbk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/forgetstyle.css">
+    <title>忘记密码</title>
+</head>
+<body>
+    <form method="post" action="./Dll/LoginDll.dll">
+    <div class="forget-card">
+        <h2 class="forget-title">找回密码</h2>
+        <p class="forget-desc">输入用户名，重置你的密码</p>
+
+        <input type="hidden" name="action" value="reset">
+
+        <div class="input-group">
+            <label>用户名</label>
+            <input type="text" name="account" class="cartoon-input" placeholder="请输入用户名">
+        </div>
+
+        <div class="input-group">
+            <label>新密码</label>
+            <input type="password" name="pwd" class="cartoon-input" placeholder="请设置6-16位新密码">
+        </div>
+
+        <div class="input-group">
+            <label>确认新密码</label>
+            <input type="password" name="confirmPwd" class="cartoon-input" placeholder="再次输入新密码">
+        </div>
+
+        <button type="submit" class="reset-btn">重置密码</button>
+
+        <div class="footer-text">
+            想起来了？<a href="login.html">返回登录</a>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

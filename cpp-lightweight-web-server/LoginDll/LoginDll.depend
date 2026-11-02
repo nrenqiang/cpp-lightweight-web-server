@@ -1,0 +1,88 @@
+# depslib dependency file v1.0
+1782111463 source:d:\simplewebserver\logindll\src\cuserlogin.cpp
+	"../include/CUserLogin.h"
+	<iostream>
+
+1781579528 d:\simplewebserver\logindll\include\cuserlogin.h
+	"IWebServer.h"
+	<string>
+
+1781621128 d:\simplewebserver\logindll\include\iwebserver.h
+	<map>
+	<string>
+
+1782539195 source:d:\simplewebserver\logindll\src\cdatabase.cpp
+	"../include/CDatabase.h"
+
+1782539203 d:\simplewebserver\logindll\include\cdatabase.h
+	"sqlite3.h"
+	<string>
+	<vector>
+	<map>
+	<iostream>
+
+1739884186 d:\simplewebserver\logindll\include\sqlite3.h
+	<stdarg.h>
+
+1739884186 source:d:\simplewebserver\logindll\src\sqlite3.c
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	"sqlite_cfg.h"
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<ctype.h>
+	<TargetConditionals.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+	<sys/time.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	<Windows.h>
+	"tclsqlite.h"
+	"sqlite3rtree.h"
+	<ctype.h>
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<math.h>
+
